@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from '../ContactForm/ContactForm.module.css';
 
 export const ContactItem = ({ id, name, number, onDelete }) => {
     const handleDelete = () => {
@@ -9,9 +10,9 @@ export const ContactItem = ({ id, name, number, onDelete }) => {
       <>
         <li key={id}>
           <p>
-            {name}: {number}s
+            {name}: {number}
           </p>
-          <button onClick={handleDelete}>Delete</button>
+          <button className={css.btn} onClick={handleDelete}>Delete</button>
         </li>
       </>
     );
@@ -30,7 +31,7 @@ export const ContactList = ({ contacts, handleDelete }) => {
       <ul>
         {contacts.map(contact => {
           return (
-            <ContactItem
+            <ContactItem                  
               key={contact.id}
               id={contact.id}
               name={contact.name}

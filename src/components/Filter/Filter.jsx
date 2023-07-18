@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from '../ContactForm/ContactForm.module.css';
 
 export const Filter = ({ filter, onChange }) => {
   return (
@@ -8,6 +9,7 @@ export const Filter = ({ filter, onChange }) => {
         <label>
           Find contacts by name
           <input
+            className={css.input}
             type="text"
             name="name"
             value={filter}

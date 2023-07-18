@@ -3,6 +3,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import css from './ContactForm.module.css'; 
 
+
 export class ContactForm extends Component {
   state = {
     name: '',
@@ -34,6 +35,7 @@ export class ContactForm extends Component {
           <label>
             Name
             <input
+              className={css.input}
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -46,6 +48,7 @@ export class ContactForm extends Component {
           <label>
             Number
             <input
+              className={css.input}
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -55,7 +58,7 @@ export class ContactForm extends Component {
               onChange={this.changeHandler}
             />
           </label>
-          <button>Add contact</button>
+          <button className={css.btn}>Add contact</button>
         </form>
       </>
     );
